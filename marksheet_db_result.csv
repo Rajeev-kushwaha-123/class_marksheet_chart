@@ -1,0 +1,77 @@
+,marksheet_fact_description,name,internal_description,external_description,year,grade_description,rollno_description,student_name_description,sgpa_description,semester_description,mark_description
+0,1,Sensor & Instrumentation,48,45.0,2,B,2200540109014,Rajeev kushwaha,8.0,3,705
+1,2,Technical Communication,44,66.0,2,B+,2200540109014,Rajeev kushwaha,8.0,3,705
+2,3,Data Structure,47,80.0,2,A,2200540109014,Rajeev kushwaha,8.0,3,705
+3,4,Computer Organization and Architecture,44,59.0,2,B,2200540109014,Rajeev kushwaha,8.0,3,705
+4,5,Discrete Structures & Theory of Logic,48,47.0,2,B,2200540109014,Rajeev kushwaha,8.0,3,705
+5,6,Data Structures Using C Lab,22,24.0,2,A+,2200540109014,Rajeev kushwaha,8.0,3,705
+6,7,Computer Organization Lab,20,20.0,2,A,2200540109014,Rajeev kushwaha,8.0,3,705
+7,8,Discrete Structure & Logic Lab,22,24.0,2,A+,2200540109014,Rajeev kushwaha,8.0,3,705
+8,9,Mini Project or Internship Assessmen,45,,2,A+,2200540109014,Rajeev kushwaha,8.0,3,705
+9,10,Computer System Security,24,30.0,2,,2200540109014,Rajeev kushwaha,8.0,3,705
+10,11,Maths IV,49,64.0,2,B+,2200540109014,Rajeev kushwaha,8.67,4,733
+11,12,Universal Human Values,50,53.0,2,B,2200540109014,Rajeev kushwaha,8.67,4,733
+12,13,Operating Systems,49,74.0,2,A,2200540109014,Rajeev kushwaha,8.67,4,733
+13,14,Theory of Automata and Formal Languages,48,79.0,2,A,2200540109014,Rajeev kushwaha,8.67,4,733
+14,15,Microprocessor,49,72.0,2,A,2200540109014,Rajeev kushwaha,8.67,4,733
+15,16,Operating Systems Lab,25,24.0,2,A+,2200540109014,Rajeev kushwaha,8.67,4,733
+16,17,Microprocessor Lab,25,24.0,2,A+,2200540109014,Rajeev kushwaha,8.67,4,733
+17,18,Python Language Programming Lab,25,23.0,2,A+,2200540109014,Rajeev kushwaha,8.67,4,733
+18,19,Python Programming,23,22.0,2,,2200540109014,Rajeev kushwaha,8.67,4,733
+19,20,Database Management System,50,78.0,3,A,2200540109014,Rajeev kushwaha,9.05,5,800
+20,21,Compiler Design,50,70.0,3,A,2200540109014,Rajeev kushwaha,9.05,5,800
+21,22,Design and Analysis of Algorithm,50,75.0,3,A,2200540109014,Rajeev kushwaha,9.05,5,800
+22,23,Web Designing,50,71.0,3,A,2200540109014,Rajeev kushwaha,9.05,5,800
+23,24,Machine Learning Techniques,50,65.0,3,B+,2200540109014,Rajeev kushwaha,9.05,5,800
+24,25,Database Management System Lab,24,25.0,3,A+,2200540109014,Rajeev kushwaha,9.05,5,800
+25,26,Compiler Design Lab,23,24.0,3,A+,2200540109014,Rajeev kushwaha,9.05,5,800
+26,27,Design and Analysis of Algorithm Lab,24,23.0,3,A+,2200540109014,Rajeev kushwaha,9.05,5,800
+27,28,Mini Project or Internship Assessment,48,,3,A+,2200540109014,Rajeev kushwaha,9.05,5,800
+28,29,"CONSTITUTION OF INDIA, LAW AND ENGINEERING",25,26.0,3,,2200540109014,Rajeev kushwaha,9.05,5,800
+29,30,Software Engineering,50,71.0,3,A,2200540109014,Rajeev kushwaha,8.95,6,763
+30,31,Web Technology,50,80.0,3,A,2200540109014,Rajeev kushwaha,8.95,6,763
+31,32,Computer Networks,50,68.0,3,B+,2200540109014,Rajeev kushwaha,8.95,6,763
+32,33,Big Data,50,72.0,3,A,2200540109014,Rajeev kushwaha,8.95,6,763
+33,34,SOFTWARE PROJECT MANAGEMENT,50,75.0,3,A,2200540109014,Rajeev kushwaha,8.95,6,763
+34,35,Software Engineering Lab,25,25.0,3,A+,2200540109014,Rajeev kushwaha,8.95,6,763
+35,36,Web Technology Lab,24,24.0,3,A+,2200540109014,Rajeev kushwaha,8.95,6,763
+36,37,Computer Networks Lab,24,25.0,3,A+,2200540109014,Rajeev kushwaha,8.95,6,763
+37,38,"INDIAN TRADITION, CULTURE AND SOCIETY",25,39.0,3,,2200540109014,Rajeev kushwaha,8.95,6,763
+38,39,Sensor & Instrumentation,47,60.0,2,B+,2200540109016,Sadanand,8.09,3,726
+39,40,Technical Communication,47,80.0,2,A,2200540109016,Sadanand,8.09,3,726
+40,41,Data Structure,47,38.0,2,C,2200540109016,Sadanand,8.09,3,726
+41,42,Computer Organization and Architecture,44,67.0,2,B+,2200540109016,Sadanand,8.09,3,726
+42,43,Discrete Structures & Theory of Logic,47,68.0,2,B+,2200540109016,Sadanand,8.09,3,726
+43,44,Data Structures Using C Lab,24,24.0,2,A+,2200540109016,Sadanand,8.09,3,726
+44,45,Computer Organization Lab,20,21.0,2,A,2200540109016,Sadanand,8.09,3,726
+45,46,Discrete Structure & Logic Lab,23,24.0,2,A+,2200540109016,Sadanand,8.09,3,726
+46,47,Mini Project or Internship Assessmen,45,,2,A+,2200540109016,Sadanand,8.09,3,726
+47,48,Computer System Security,23,30.0,2,,2200540109016,Sadanand,8.09,3,726
+48,49,Maths IV,49,51.0,2,B,2200540109016,Sadanand,7.71,4,682
+49,50,Universal Human Values,50,61.0,2,B+,2200540109016,Sadanand,7.71,4,682
+50,51,Operating Systems,49,70.0,2,B+,2200540109016,Sadanand,7.71,4,682
+51,52,Theory of Automata and Formal Languages,49,69.0,2,B+,2200540109016,Sadanand,7.71,4,682
+52,53,Microprocessor,48,39.0,2,C,2200540109016,Sadanand,7.71,4,682
+53,54,Operating Systems Lab,25,24.0,2,A+,2200540109016,Sadanand,7.71,4,682
+54,55,Microprocessor Lab,25,24.0,2,A+,2200540109016,Sadanand,7.71,4,682
+55,56,Python Language Programming Lab,25,24.0,2,A+,2200540109016,Sadanand,7.71,4,682
+56,57,Python Programming,23,28.0,2,,2200540109016,Sadanand,7.71,4,682
+57,58,Database Management System,48,80.0,3,A,2200540109016,Sadanand,8.09,5,731
+58,59,Compiler Design,48,41.0,3,C,2200540109016,Sadanand,8.09,5,731
+59,60,Design and Analysis of Algorithm,47,36.0,3,C,2200540109016,Sadanand,8.09,5,731
+60,61,Web Designing,48,89.0,3,A+,2200540109016,Sadanand,8.09,5,731
+61,62,Machine Learning Techniques,49,58.0,3,B+,2200540109016,Sadanand,8.09,5,731
+62,63,Database Management System Lab,24,24.0,3,A+,2200540109016,Sadanand,8.09,5,731
+63,64,Compiler Design Lab,24,23.0,3,A+,2200540109016,Sadanand,8.09,5,731
+64,65,Design and Analysis of Algorithm Lab,23,23.0,3,A+,2200540109016,Sadanand,8.09,5,731
+65,66,Mini Project or Internship Assessment,46,,3,A+,2200540109016,Sadanand,8.09,5,731
+66,67,"CONSTITUTION OF INDIA, LAW AND ENGINEERING",25,37.0,3,,2200540109016,Sadanand,8.09,5,731
+67,68,Software Engineering,48,67.0,3,B+,2200540109016,Sadanand,8.33,6,714
+68,69,Web Technology,46,81.0,3,A,2200540109016,Sadanand,8.33,6,714
+69,70,Computer Networks,45,70.0,3,B+,2200540109016,Sadanand,8.33,6,714
+70,71,Big Data,48,69.0,3,B+,2200540109016,Sadanand,8.33,6,714
+71,72,SOFTWARE PROJECT MANAGEMENT,46,57.0,3,B,2200540109016,Sadanand,8.33,6,714
+72,73,Software Engineering Lab,21,24.0,3,A+,2200540109016,Sadanand,8.33,6,714
+73,74,Web Technology Lab,21,24.0,3,A+,2200540109016,Sadanand,8.33,6,714
+74,75,Computer Networks Lab,25,22.0,3,A+,2200540109016,Sadanand,8.33,6,714
+75,76,"INDIAN TRADITION, CULTURE AND SOCIETY",24,34.0,3,,2200540109016,Sadanand,8.33,6,714

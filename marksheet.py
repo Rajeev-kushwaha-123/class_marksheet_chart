@@ -39,7 +39,9 @@ JOIN
     ON mf."SGPA_code" = sg."SGPA_code"; 
 '''
 
-df = pd.read_sql_query(query, db_url)
+# df = pd.read_sql_query(query, db_url)
+# print(df.to_csv('marksheet_db_result.csv'))
+df = pd.read_csv("marksheet_db_result.csv")
 
 # Define default dropdown values function
 def get_default_dropdown_values():
