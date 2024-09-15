@@ -7,6 +7,7 @@ from sqlalchemy import create_engine
 from dotenv import load_dotenv
 import plotly.io as pio
 import io
+import base64
 
 load_dotenv()
 
@@ -18,7 +19,6 @@ db_url = create_engine(
 # Query to fetch data
 query = '''
 SELECT 
-    mf."Marksheet_fact_code" as Marksheet_fact_description, 
     mf."Name" as name,
     mf."Internal" as internal_description,
     mf."External" as external_description,
@@ -45,10 +45,10 @@ df = pd.read_csv("marksheet_db_result.csv")
 
 # Define default dropdown values function
 def get_default_dropdown_values():
-    default_semester = "3"
+    default_semester = 3
     default_name = ["Select All"]
-    default_year = "2"
-    default_rollno="2200540109014"
+    default_year = 2
+    default_rollno=2200540109014
     default_student_name="Rajeev kushwaha"
     return default_semester, default_name, default_year,default_rollno,default_student_name
 
@@ -269,31 +269,55 @@ def update_name_dropdown(sem):
     [State("subject-dropdown", "value"),
      State("semester-dropdown", "value"),
      State("year-dropdown", "value"),
-     State("rollno-dropdown","value"),
-     State("student-name-dropdown","value")]
+     State("rollno-dropdown", "value"),
+     State("student-name-dropdown", "value")]
 )
-def update_plot(n_clicks, n_intervals, name, semester, year,rollno,student):
+def update_plot(n_clicks, n_intervals, subjects, semester, year, rollno, student):
     ctx = dash.callback_context
+    
     if not ctx.triggered:
         button_id = None
     else:
         button_id = ctx.triggered[0]["prop_id"].split(".")[0]
 
-    # Handle "Select All" logic
-    if "Select All" in name:
-        filtered_df = df[(df['year'] == year) & (df['semester_description'] == semester) & (df['rollno_description'] == rollno) & (df['student_name_description'] == student)]
-    else:
-        filtered_df = df[(df['year'] == year) &
-                         (df['semester_description'] == semester) &
-                         (df['name'] & (df['rollno_description'] == rollno) &
-                        (df['student_name_description'] == student).isin(name))]
+    # Handle default values if no button was pressed or interval triggered
+    if button_id is None or button_id == 'interval-component':
+        subjects = default_name
+        semester = default_semester
+        year = default_year
+        rollno = default_rollno
+        student = default_student_name
 
-    # Filter out rows where 'internal_description' is missing
+    # Debug: Print current values
+    print("Current Values:")
+    print(f"Subjects: {subjects}")
+    print(f"Semester: {semester}")
+    print(f"Year: {year}")
+    print(f"Rollno: {rollno}")
+    print(f"Student: {student}")
+
+    # Filter DataFrame based on selected values
+    if "Select All" in subjects:
+        filtered_df = df[(df['year'] == year) & 
+                         (df['semester_description'] == semester) & 
+                         (df['rollno_description'] == rollno) & 
+                         (df['student_name_description'] == student)]
+    else:
+        filtered_df = df[(df['year'] == year) & 
+                         (df['semester_description'] == semester) & 
+                         (df['name'].isin(subjects)) & 
+                         (df['rollno_description'] == rollno) & 
+                         (df['student_name_description'] == student)]
+
+    # Drop rows where 'internal_description' is missing
     filtered_df = filtered_df.dropna(subset=['internal_description'])
 
-    # Extract unique SGPA values and concatenate them into a string for the x-axis title
+    # Debug: Print the filtered DataFrame shape after dropping NA
+    print(f"Filtered DataFrame shape after dropping NA: {filtered_df.shape}")
+
+    # Extract unique SGPA values and Total Marks for layout updates
     unique_sgpa = ", ".join(map(str, filtered_df['sgpa_description'].unique()))
-    Total_Marks=", ".join(map(str, filtered_df['mark_description'].unique()))
+    Total_Marks = ", ".join(map(str, filtered_df['mark_description'].unique()))
 
     # Create the figure
     fig = go.Figure()
@@ -311,25 +335,27 @@ def update_plot(n_clicks, n_intervals, name, semester, year,rollno,student):
 
         # Plot internal marks
         fig.add_trace(go.Scatter(
-            x=filtered_df["name"],
+            x=filtered_df["name"], 
             y=filtered_df["internal_description"],
             mode="lines+markers",
             name="Internal Marks",
             marker=dict(size=15),
             line=dict(color='red')
         ))
-        # Update layout with dynamic SGPA values in x-axis title
+
+        # Update layout with dynamic SGPA values and Total Marks
         fig.update_layout(
             xaxis={"title": f"Subject Name (SGPA: {unique_sgpa})"},
-            yaxis={"title": f"Total Marks obtained {Total_Marks}"},
+            yaxis={"title": f"Total Marks (obtained: {Total_Marks})"},
+            xaxis_title_font=dict(size=17, family='Arial, sans-serif', color='black', weight='bold'),
+            yaxis_title_font=dict(size=17, family='Arial, sans-serif', color='black', weight='bold'),
             hovermode="closest",
             legend_title="Marks and SGPA"
         )
 
     return fig
 
-
-
+# Handle SVG download
 @app.callback(
     Output("download", "data"),
     Input("download-svg-button", "n_clicks"),
@@ -337,15 +363,14 @@ def update_plot(n_clicks, n_intervals, name, semester, year,rollno,student):
     prevent_initial_call=True
 )
 def download_svg(n_clicks, figure):
-    if n_clicks > 0:
-        try:
-            # Convert the figure to an SVG string
-            svg_str = pio.to_image(go.Figure(figure), format="svg")
-            return dcc.send_bytes(svg_str, "plot.svg")
-        except Exception as e:
-            print(f"Error converting figure to SVG: {e}")
-            return None
-
+    print('DOWNLOAD BUTTON CLICKED!')
+    if n_clicks:
+        fig = go.Figure(figure)
+        # Generate SVG string
+        svg_str = pio.to_image(fig, format="svg")
+        
+        # Return the SVG as bytes to trigger download
+        return dcc.send_bytes(lambda: svg_str.encode(), "plot.svg")
 
 # Run the app
 if __name__ == '__main__':
